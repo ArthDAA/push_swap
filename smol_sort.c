@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   smol_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 12:35:15 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/24 14:41:39 by arde-ass         ###   ########.fr       */
+/*   Created: 2026/03/24 07:15:57 by arde-ass          #+#    #+#             */
+/*   Updated: 2026/03/25 10:13:47 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_stack_node	*smol_sort(t_stack_node *head)
 {
-	long	nb;
+	t_stack_node	*max_node;
 
-	nb = n;
-	if (nb < 0)
+	if (!head || !head->next || head->next->next == head)
+		return (head);
+	max_node = get_max_node(head);
+	if (head == max_node)
 	{
-		write(fd, "-", 1);
-		nb = -nb;
+		ra(&head);
 	}
-	if (nb >= 10)
+	else if (head->next == max_node)
 	{
-		ft_putnbr_fd((int)(nb / 10), fd);
+		rra(&head);
 	}
-	ft_putchar_fd((char)(nb % 10 + '0'), fd);
+	if (head->index > head->next->index)
+	{
+		sa(&head);
+	}
+	return (head);
 }
