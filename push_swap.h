@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:44:30 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/02 10:56:15 by arde-ass         ###   ########.fr       */
+/*   Updated: 2026/04/03 13:18:56 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void			rra(t_stack_node **a);
 void			rrb(t_stack_node **b);
 void			rrr(t_stack_node **a, t_stack_node **b);
 
-t_stack_node 	*get_min_node(t_stack_node *head);
-t_stack_node 	*get_max_node(t_stack_node *head);
-int				get_stack_size (t_stack_node *head);
+t_stack_node	*get_min_node(t_stack_node *head);
+t_stack_node	*get_max_node(t_stack_node *head);
+int				get_stack_size(t_stack_node *head);
 
 #endif

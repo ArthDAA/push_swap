@@ -6,16 +6,16 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 09:13:25 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/03/24 07:22:01 by arde-ass         ###   ########.fr       */
+/*   Updated: 2026/04/03 13:17:47 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node *get_min_node(t_stack_node *head)
+t_stack_node	*get_min_node(t_stack_node *head)
 {
-	t_stack_node *min_node;
-	t_stack_node *tmp;
+	t_stack_node	*min_node;
+	t_stack_node	*tmp;
 
 	if (!head)
 		return (NULL);
@@ -30,11 +30,11 @@ t_stack_node *get_min_node(t_stack_node *head)
 	return (min_node);
 }
 
-t_stack_node *get_max_node(t_stack_node *head)
+t_stack_node	*get_max_node(t_stack_node *head)
 
 {
-	t_stack_node *max_node;
-	t_stack_node *tmp;
+	t_stack_node	*max_node;
+	t_stack_node	*tmp;
 
 	if (!head)
 		return (NULL);
@@ -49,14 +49,13 @@ t_stack_node *get_max_node(t_stack_node *head)
 	return (max_node);
 }
 
-int	get_stack_size (t_stack_node *head)
+int	get_stack_size(t_stack_node *head)
 {
 	t_stack_node	*tmp;
 	int				i;
 
 	if (!head)
 		return (0);
-	
 	tmp = head->next;
 	i = 1;
 	while (tmp != head)
